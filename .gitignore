@@ -4,5 +4,3 @@ __pycache__/
 credentials.json
 venv/
 .vscode/
-static/gambar/hero-section.gif
-/gambar/
