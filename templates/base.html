@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DeckStation.id — PRO Audio Repair Specialist{% endblock %}</title>
+    <meta name="description" content="{% block meta_desc %}Independent repair & maintenance service for DJ & Pro Audio equipment in Bali. CDJ, DJM, Technics SL-1200, and on-site maintenance.{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}DeckStation.id — PRO Audio Repair Specialist{% endblock %}">
+    <meta property="og:description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deckstation.id">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
+</head>
+<body>
+
+    <header class="page-header-bar">
+        <a href="{{ url_for('home') }}" class="page-logo">
+            <img src="{{ url_for('static', filename='gambar/logo.svg') }}" alt="DeckStation.id" style="height:44px;width:auto;">
+        </a>
+        <nav class="page-nav">
+            <a href="{{ url_for('home') }}" class="page-nav-link {% if active_nav == 'home' %}active{% endif %}">Home</a>
+            <a href="{{ url_for('layanan') }}" class="page-nav-link {% if active_nav == 'layanan' %}active{% endif %}">Services</a>
+            <a href="{{ url_for('tentang') }}" class="page-nav-link {% if active_nav == 'tentang' %}active{% endif %}">About</a>
+            <a href="{{ url_for('booking') }}" class="page-nav-link {% if active_nav == 'booking' %}active{% endif %}">Booking</a>
+            <a href="{{ url_for('faq') }}" class="page-nav-link {% if active_nav == 'faq' %}active{% endif %}">FAQ</a>
+            <a href="{{ url_for('kontak') }}" class="page-nav-link {% if active_nav == 'kontak' %}active{% endif %}">Contact</a>
+        </nav>
+        <div class="page-header-right">
+            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <a href="{{ url_for('home') }}">DeckStation.id</a> — PRO Audio Repair Specialist. All rights reserved.</p>
+        <p style="margin-top:5px;font-size:12px;color:rgba(255,255,255,0.4);">Serving all Bali area</p>
+    </footer>
+
+    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeEls = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+            fadeEls.forEach(el => observer.observe(el));
+
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

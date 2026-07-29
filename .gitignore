@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+credentials.json
+venv/
+.vscode/
+static/gambar/hero-section.gif
+/gambar/

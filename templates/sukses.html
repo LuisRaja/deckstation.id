@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% set active_nav = 'booking' %}
+
+{% block title %}Booking Submitted — DeckStation.id{% endblock %}
+
+{% block content %}
+<section class="success-page fade-in">
+    <div class="check">✅</div>
+    <h1>Booking Submitted!</h1>
+    <p>
+        Thank you {{ nama }}! Your booking has been received.
+        We will confirm the pickup schedule via WhatsApp within 24 hours.
+    </p>
+    <p style="font-size:14px;color:#555;margin-bottom:30px;">
+        <strong>WhatsApp:</strong> 0856-0289-7420<br>
+        <strong>Service:</strong> {{ layanan }}<br>
+        <strong>Date:</strong> {{ tanggal }}
+    </p>
+    <a href="{{ url_for('home') }}" class="btn btn-outline">Back to Home</a>
+    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20sudah%20booking%20via%20website%2C%20berikut%20detail%20saya%3A" class="btn btn-wa" style="margin-left:10px;" target="_blank" rel="noopener">Confirm via WhatsApp</a>
+</section>
+{% endblock %}

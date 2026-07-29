@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% set active_nav = 'booking' %}
+
+{% block title %}Booking — DeckStation.id | PRO Audio Repair Specialist{% endblock %}
+
+{% block content %}
+<div class="page-header fade-in">
+    <h1>Book a Service</h1>
+    <p>Fill out the form below to schedule a repair or maintenance for your equipment</p>
+</div>
+
+<div class="booking-form fade-in">
+    <form method="POST" action="{{ url_for('booking') }}">
+        <div class="form-group">
+            <label for="nama">Full Name <span class="required">*</span></label>
+            <input type="text" id="nama" name="nama" required placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label for="wa">WhatsApp Number <span class="required">*</span></label>
+            <input type="tel" id="wa" name="wa" required placeholder="08xxxxxxxxxx" pattern="[0-9]+">
+            <div class="hint">Keep notifications on for booking confirmation</div>
+        </div>
+
+        <div class="form-group">
+            <label for="layanan">Service <span class="required">*</span></label>
+            <select id="layanan" name="layanan" required>
+                <option value="">— Select Service —</option>
+                <option value="CDJ/DJM Repair">🎛️ CDJ/DJM Repair</option>
+                <option value="Technics SL-1200 Service">💿 Technics SL-1200 Service & Calibration</option>
+                <option value="On-Site Maintenance">📍 On-Site Maintenance</option>
+                <option value="Lainnya">Other (describe in issues)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="keluhan">Issue Description <span class="required">*</span></label>
+            <textarea id="keluhan" name="keluhan" required placeholder="Describe the issue with your equipment in detail..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Pickup Address <span class="required">*</span></label>
+            <textarea id="alamat" name="alamat" required placeholder="Enter your full address for equipment pickup. (We are a call-out service — covering all Bali area)"></textarea>
+            <div class="hint">We are a call-out service — we will pick up your equipment from your location</div>
+        </div>
+
+        <div class="form-group">
+            <label for="tanggal">Preferred Date & Time <span class="required">*</span></label>
+            <input type="datetime-local" id="tanggal" name="tanggal" required>
+        </div>
+
+        <div style="text-align:center;margin-top:30px;">
+            <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:16px;">
+                Submit Booking
+            </button>
+        </div>
+
+        <p style="text-align:center;margin-top:15px;font-size:13px;color:#888;">
+            Booking data will be sent to our email and scheduled to Google Calendar.
+            We will confirm via your WhatsApp.
+        </p>
+    </form>
+</div>
+{% endblock %}
