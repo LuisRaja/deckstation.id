@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — DeckStation.id | PRO Audio Repair Specialist</title>
+    <meta name="description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali. CDJ, DJM, Technics SL-1200, and on-site maintenance.">
+    <meta property="og:title" content="DeckStation.id — PRO Audio Repair Specialist">
+    <meta property="og:description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deckstation.id">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
+</head>
+<body>
+
+    <header class="page-header-bar">
+        <a href="index.html" class="page-logo">
+            <img src="static/gambar/logo.svg" alt="DeckStation.id" style="height:44px;width:auto;">
+        </a>
+        <nav class="page-nav">
+            <a href="index.html" class="page-nav-link ">Home</a>
+            <a href="layanan.html" class="page-nav-link ">Services</a>
+            <a href="tentang.html" class="page-nav-link ">About</a>
+            <a href="booking.html" class="page-nav-link ">Booking</a>
+            <a href="faq.html" class="page-nav-link ">FAQ</a>
+            <a href="kontak.html" class="page-nav-link active">Contact</a>
+        </nav>
+        <div class="page-header-right">
+            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+    </header>
+
+    <main>
+        
+<div class="page-header fade-in">
+    <h1>Contact Us</h1>
+    <p>We are ready to help you</p>
+</div>
+
+<section class="contact-section fade-in" style="max-width:600px;margin:0 auto;">
+    <div style="background:#fff;padding:40px;border-radius:8px;border:1px solid #e0e0e0;box-shadow:0 2px 15px rgba(0,0,0,0.06);">
+        <div style="margin-bottom:30px;">
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">WhatsApp</h3>
+            <p style="font-size:20px;font-weight:600;color:#000;">0856-0289-7420</p>
+            <p style="font-size:13px;color:#555;margin-top:4px;">Fast response, replies within 24 hours</p>
+            <a href="https://wa.me/6285602897420" class="btn btn-wa" style="margin-top:15px;" target="_blank" rel="noopener">💬 Chat Now</a>
+        </div>
+
+        <hr style="border:none;border-top:1px solid #e0e0e0;margin:25px 0;">
+
+        <div style="margin-bottom:30px;">
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Email</h3>
+            <p style="font-size:15px;color:#000;">kenapayaa86@gmail.com</p>
+            <p style="font-size:15px;color:#000;">louyzhradja86@gmail.com</p>
+        </div>
+
+        <hr style="border:none;border-top:1px solid #e0e0e0;margin:25px 0;">
+
+        <div>
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Service Area</h3>
+            <p style="font-size:14px;color:#555;line-height:1.7;">
+                <strong>Call-Out Service</strong> — Covering all Bali area<br>
+                We come to your location for pickup & delivery of equipment.
+            </p>
+            <p style="font-size:14px;color:#555;margin-top:10px;">
+                ⏰ Monday - Saturday: 09:00 - 20:00<br>
+                ⏰ Sunday: By appointment
+            </p>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <a href="index.html">DeckStation.id</a> — PRO Audio Repair Specialist. All rights reserved.</p>
+        <p style="margin-top:5px;font-size:12px;color:rgba(255,255,255,0.4);">Serving all Bali area</p>
+    </footer>
+
+    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeEls = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+            fadeEls.forEach(el => observer.observe(el));
+
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

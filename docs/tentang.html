@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — DeckStation.id | PRO Audio Repair Specialist</title>
+    <meta name="description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali. CDJ, DJM, Technics SL-1200, and on-site maintenance.">
+    <meta property="og:title" content="DeckStation.id — PRO Audio Repair Specialist">
+    <meta property="og:description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deckstation.id">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
+</head>
+<body>
+
+    <header class="page-header-bar">
+        <a href="index.html" class="page-logo">
+            <img src="static/gambar/logo.svg" alt="DeckStation.id" style="height:44px;width:auto;">
+        </a>
+        <nav class="page-nav">
+            <a href="index.html" class="page-nav-link ">Home</a>
+            <a href="layanan.html" class="page-nav-link ">Services</a>
+            <a href="tentang.html" class="page-nav-link active">About</a>
+            <a href="booking.html" class="page-nav-link ">Booking</a>
+            <a href="faq.html" class="page-nav-link ">FAQ</a>
+            <a href="kontak.html" class="page-nav-link ">Contact</a>
+        </nav>
+        <div class="page-header-right">
+            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+    </header>
+
+    <main>
+        
+<div class="page-header fade-in">
+    <h1>About DeckStation</h1>
+    <p>Get to know us</p>
+</div>
+
+<div class="content-page fade-in">
+    <p>
+        <strong>DeckStation Bali</strong> is an independent service station specialized
+        in DJ and pro audio equipment repair and maintenance. We provide fast, precise,
+        and trusted technical solutions for DJs, nightclubs, beach clubs, event organizers,
+        and equipment rental providers across Bali.
+    </p>
+
+    <h3 style="margin-top:40px;font-size:22px;font-weight:700;">Our Services</h3>
+    <ul>
+        <li>
+            <strong>General Service & Cleaning:</strong> Thorough cleaning of mechanical &
+            internal electronic components from dust, corrosion, and liquid residue.
+        </li>
+        <li>
+            <strong>Hardware Repair & Replacement:</strong> Tactile switch replacement (Cue/Play
+            buttons), fader/crossfader, jog wheel repair, up to mainboard repair.
+        </li>
+        <li>
+            <strong>Turntables Calibration:</strong> Precision service, pitch control calibration,
+            tonearm repair, and electrical work for Technics SL-1200 series.
+        </li>
+        <li>
+            <strong>On-Site Maintenance:</strong> Maintenance service directly at your venue
+            for event preparation or routine club maintenance.
+        </li>
+    </ul>
+
+    <h3 style="margin-top:40px;font-size:22px;font-weight:700;">Why Choose DeckStation Bali?</h3>
+    <ul>
+        <li>⚙️ Handled directly by experienced pro audio technicians.</li>
+        <li>🛠️ Neat, precise work with transparent component/sparepart usage.</li>
+        <li>⚡ Efficient turnaround to support your event schedule.</li>
+        <li>🤝 Customer satisfaction and service warranty guaranteed.</li>
+    </ul>
+
+    <p style="margin-top:40px;font-style:italic;color:#888;">
+        Note: DeckStation Bali operates as an independent specialist workshop.
+    </p>
+</div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <a href="index.html">DeckStation.id</a> — PRO Audio Repair Specialist. All rights reserved.</p>
+        <p style="margin-top:5px;font-size:12px;color:rgba(255,255,255,0.4);">Serving all Bali area</p>
+    </footer>
+
+    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeEls = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+            fadeEls.forEach(el => observer.observe(el));
+
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

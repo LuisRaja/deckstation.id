@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking — DeckStation.id | PRO Audio Repair Specialist</title>
+    <meta name="description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali. CDJ, DJM, Technics SL-1200, and on-site maintenance.">
+    <meta property="og:title" content="DeckStation.id — PRO Audio Repair Specialist">
+    <meta property="og:description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deckstation.id">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
+</head>
+<body>
+
+    <header class="page-header-bar">
+        <a href="index.html" class="page-logo">
+            <img src="static/gambar/logo.svg" alt="DeckStation.id" style="height:44px;width:auto;">
+        </a>
+        <nav class="page-nav">
+            <a href="index.html" class="page-nav-link ">Home</a>
+            <a href="layanan.html" class="page-nav-link ">Services</a>
+            <a href="tentang.html" class="page-nav-link ">About</a>
+            <a href="booking.html" class="page-nav-link active">Booking</a>
+            <a href="faq.html" class="page-nav-link ">FAQ</a>
+            <a href="kontak.html" class="page-nav-link ">Contact</a>
+        </nav>
+        <div class="page-header-right">
+            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+    </header>
+
+    <main>
+        
+<div class="page-header fade-in">
+    <h1>Book a Service</h1>
+    <p>Fill out the form below to schedule a repair or maintenance for your equipment</p>
+</div>
+
+<div class="booking-form fade-in">
+    <form method="POST" action="https://formsubmit.co/kenapayaa86@gmail.com">
+        <input type="hidden" name="_subject" value="New Booking — DeckStation.id">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_cc" value="louyzhradja86@gmail.com">
+        <input type="hidden" name="_next" value="sukses.html?nama={nama}&layanan={layanan}&tanggal={tanggal}">
+        <div class="form-group">
+            <label for="nama">Full Name <span class="required">*</span></label>
+            <input type="text" id="nama" name="nama" required placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label for="wa">WhatsApp Number <span class="required">*</span></label>
+            <input type="tel" id="wa" name="wa" required placeholder="08xxxxxxxxxx" pattern="[0-9]+">
+            <div class="hint">Keep notifications on for booking confirmation</div>
+        </div>
+
+        <div class="form-group">
+            <label for="layanan">Service <span class="required">*</span></label>
+            <select id="layanan" name="layanan" required>
+                <option value="">— Select Service —</option>
+                <option value="CDJ/DJM Repair">🎛️ CDJ/DJM Repair</option>
+                <option value="Technics SL-1200 Service">💿 Technics SL-1200 Service & Calibration</option>
+                <option value="On-Site Maintenance">📍 On-Site Maintenance</option>
+                <option value="Lainnya">Other (describe in issues)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="keluhan">Issue Description <span class="required">*</span></label>
+            <textarea id="keluhan" name="keluhan" required placeholder="Describe the issue with your equipment in detail..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Pickup Address <span class="required">*</span></label>
+            <textarea id="alamat" name="alamat" required placeholder="Enter your full address for equipment pickup. (We are a call-out service — covering all Bali area)"></textarea>
+            <div class="hint">We are a call-out service — we will pick up your equipment from your location</div>
+        </div>
+
+        <div class="form-group">
+            <label for="tanggal">Preferred Date & Time <span class="required">*</span></label>
+            <input type="datetime-local" id="tanggal" name="tanggal" required>
+        </div>
+
+        <div style="text-align:center;margin-top:30px;">
+            <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:16px;">
+                Submit Booking
+            </button>
+        </div>
+
+        <p style="text-align:center;margin-top:15px;font-size:13px;color:#888;">
+            Booking data will be sent to our email.
+            We will confirm via your WhatsApp.
+        </p>
+    </form>
+</div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <a href="index.html">DeckStation.id</a> — PRO Audio Repair Specialist. All rights reserved.</p>
+        <p style="margin-top:5px;font-size:12px;color:rgba(255,255,255,0.4);">Serving all Bali area</p>
+    </footer>
+
+    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeEls = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+            fadeEls.forEach(el => observer.observe(el));
+
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('.booking-form form');
+            if (form) {
+                form.addEventListener('submit', function() {
+                    var layanan = form.layanan ? (form.layanan.value || 'Service') : 'Service';
+                    var nama = form.nama ? (form.nama.value || 'N/A') : 'N/A';
+                    form._subject.value = '[New Booking] ' + layanan + ' - ' + nama;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
