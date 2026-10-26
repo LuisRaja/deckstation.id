@@ -3,96 +3,204 @@
 
 {% block title %}FAQ — DeckStation.id | PRO Audio Repair Specialist{% endblock %}
 
+{% block meta_desc %}Answers to common questions about DJ & pro audio equipment repair in Bali: pickup, turnaround, warranty, cost, spare parts and on-site maintenance.{% endblock %}
+
+{% block hero %}
+<section class="page-hero">
+        <img class="page-hero-bg" src="{{ url_for('static', filename='gambar/CDJ 3000 TOP.webp') }}" alt="Pioneer CDJ player detail">
+        <div class="page-hero-inner">
+            <nav class="breadcrumb">
+                <a href="{{ url_for('home') }}">Home</a>
+                <span class="sep">/</span>
+                <span>FAQ</span>
+            </nav>
+            <div class="eyebrow">Need Answers</div>
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything about our process, pricing, pickup and warranty. If your question is not listed, just ask us on WhatsApp.</p>
+        </div>
+    </section>
+{% endblock %}
+
 {% block content %}
-<div class="page-header fade-in">
-    <h1>Frequently Asked Questions</h1>
-    <p>Find answers to common questions</p>
-</div>
+<div class="faq-search">
+            <i data-lucide="search"></i>
+            <input type="search" id="faqSearch" placeholder="Search a question, e.g. warranty, pickup, CDJ-3000" aria-label="Search FAQ">
+        </div>
 
-<div class="faq-list fade-in">
-    <div class="faq-item">
-        <div class="faq-question">
-            What equipment can you service?
-            <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-            We handle CDJ players, DJM mixers, Technics SL-1200 series turntables, and various
-            other DJ & pro audio equipment. If in doubt, contact us for a consultation.
-        </div>
-    </div>
+        <div class="faq-list">
 
-    <div class="faq-item">
-        <div class="faq-question">
-            How does the pickup system work?
-            <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-            We are a call-out business. Simply fill out the booking form with your address,
-            and we will pick up your equipment from your location across all Bali area.
-            Once finished, we deliver it back to you.
-        </div>
-    </div>
+            <div class="faq-group-title">Service &amp; Scope</div>
 
-    <div class="faq-item">
-        <div class="faq-question">
-            How long does the repair take?
-            <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-            Turnaround time varies depending on the issue. Standard services average 1-3 working days.
-            For complex repairs (such as mainboard issues), it may take 3-7 days.
-            We will provide an estimate after diagnosis.
-        </div>
-    </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    What equipment can you service?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    We handle CDJ players (CDJ-1000, 2000, 3000), DJM mixers (DJM-600/800/900/900NXS2), Technics SL-1200 and SL-1210 turntables, other DJ gear from Denon, Numark, Stanton and Allen &amp; Heath, plus headphones, audio interfaces, microphones and PA systems. If in doubt, contact us for a consultation.
+                </div>
+            </div>
 
-    <div class="faq-item">
-        <div class="faq-question">
-            Do you offer a warranty on repairs?
-            <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-            Yes, every repair service comes with a warranty covering the components we worked on.
-            Warranty details will be explained upon equipment return.
-        </div>
-    </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    What services do you offer?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Five service lines: all-in equipment repair (CDJ, DJM, amplifiers, DSP and equalizers), club &amp; venue audio maintenance, audio system installation, DJ gear &amp; event rental (players, mixers, speakers, lighting and laser), and pro audio consultation. See the <a href="{{ url_for('layanan') }}" style="color:#fff;">Services page</a> for the full list.
+                </div>
+            </div>
 
-    <div class="faq-item">
-        <div class="faq-question">
-            How much does service cost?
-            <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-            Cost depends on the type of damage and required spare parts. We provide a cost
-            estimate after diagnosis and before any work begins. You will receive a transparent
-            cost breakdown.
-        </div>
-    </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Can you service equipment that is still under warranty?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    We can, but you should check with the manufacturer first. Most brands require authorised service for warranty claims. We are an independent workshop, so claims must be made directly with the manufacturer, while we can still handle the diagnostic and repair work.
+                </div>
+            </div>
 
-    <div class="faq-item">
-        <div class="faq-question">
-            How do I book a service?
-            <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-            You can book through the Booking page on this website, or directly chat via WhatsApp
-            to our number. After booking, we will confirm the pickup schedule within 24 hours.
-        </div>
-    </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    How much does service cost?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Cost depends on the type of damage and the required spare parts. We provide a cost estimate after diagnosis and before any work begins, with a transparent breakdown of parts and labour. Diagnosis and consultation are free of charge.
+                </div>
+            </div>
 
-    <div class="faq-item">
-        <div class="faq-question">
-            Do you accept emergency repairs for events?
-            <span class="arrow">▼</span>
-        </div>
-        <div class="faq-answer">
-            Absolutely! We understand equipment can fail during event preparation. Contact us
-            via WhatsApp and we will do our best to help as quickly as possible.
-        </div>
-    </div>
-</div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Do you supply spare parts?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Yes. We supply original and compatible spare parts — tactile switches, faders, jog sensors, belts, cables, tonearms, capacitors and more. We can also order parts for rental fleets and advise which option fits your budget best.
+                </div>
+            </div>
 
-<section class="contact-section fade-in">
-    <p style="margin-bottom:10px;">Still have questions? Feel free to ask.</p>
-    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20punya%20pertanyaan" class="btn btn-wa" target="_blank" rel="noopener">💬 Ask via WhatsApp</a>
-</section>
+            <div class="faq-group-title">Booking &amp; Pickup</div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    How does the pickup system work?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    We are a call-out business. Fill out the booking form with your address and we will pick up your equipment from your location across all Bali area. Once finished, we deliver it back to you — or hand it over on-site if you prefer.
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    How do I book a service?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Use the <a href="{{ url_for('booking') }}" style="color:#fff;">Booking page</a> on this website, or chat directly on WhatsApp. After booking we confirm the pickup schedule within 24 hours, then send a written scope and estimate before work starts.
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Which areas in Bali do you cover?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    We cover all of Bali, including Denpasar, Badung, Gianyar, Tabanan, Klungkung, Bangli and Jembrana. For venues, we can also perform the service on-site at your club, bar, beach club, villa or studio.
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Do you accept emergency repairs for events?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely. We understand equipment can fail during event preparation. Contact us via WhatsApp with your deadline and we will prioritise the job, and where possible arrange a same-day pickup.
+                </div>
+            </div>
+
+            <div class="faq-group-title">Turnaround &amp; Warranty</div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    How long does the repair take?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Turnaround time varies depending on the issue. Standard services average 1&ndash;3 working days. For complex repairs such as mainboard or display work, it may take 3&ndash;7 days, and longer if parts need to be ordered. We will provide a firm estimate after diagnosis.
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Do you offer a warranty on repairs?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Yes, every repair service comes with a warranty covering the components we worked on. Warranty details are explained upon equipment return, and the same fault within the warranty period is re-checked at no extra charge.
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    What should I do before sending my equipment?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Note the brand, model and serial number of each unit, and send us a short video or photos of the fault so we can pre-diagnose. Pack accessories (power cables, flight case, link cables) together with the unit to avoid missing parts during the return.
+                </div>
+            </div>
+
+            <div class="faq-group-title">On-Site &amp; Payment</div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Can you come to my venue for maintenance?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Yes. We offer on-site maintenance packages for clubs, bars, beach clubs and rental providers — periodic check-ups, preventive cleaning, technical preparation before events and a written equipment condition report for your records.
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    How can I pay?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Payment can be made by bank transfer (BCA, BRI, Mandiri, BNI) or in cash when the unit is collected or delivered. For rental and venue accounts, we can issue a proper invoice and work on a monthly retainer arrangement.
+                </div>
+            </div>
+
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    Are spare parts genuine?
+                    <span class="arrow"><i data-lucide="chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    We use original manufacturer parts where available and quality compatible parts otherwise, and we always tell you which one was installed. Every replaced component is documented in the handover notes.
+                </div>
+            </div>
+
+        </div>
+
+        <p id="faqEmpty" style="display:none;text-align:center;color:#a8a8a8;margin:30px 0;">No question matches your search. Try a different keyword, or ask us directly.</p>
+
+        <section style="margin-top:60px;">
+            <div class="band-cta">
+                <div>
+                    <h2>Still have questions?</h2>
+                    <p>Send us the details of your equipment and the problem. We reply within 24 hours with a clear answer — no charge, no obligation.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20punya%20pertanyaan" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Ask via WhatsApp</a>
+                    <a href="{{ url_for('booking') }}" class="btn btn-outline">Book Online</a>
+                </div>
+            </div>
+        </section>
 {% endblock %}

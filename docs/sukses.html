@@ -1,73 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Submitted — DeckStation.id</title>
-    <meta name="description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali. CDJ, DJM, Technics SL-1200, and on-site maintenance.">
-    <meta property="og:title" content="DeckStation.id — PRO Audio Repair Specialist">
-    <meta property="og:description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://deckstation.id">
+    <meta name="description" content="Your booking has been received. We will confirm the pickup schedule via WhatsApp within 24 hours.">
+    <meta name="robots" content="noindex">
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="static/gambar/logo.svg">
 </head>
-<body>
+<body class="sub-page">
 
-    <header class="page-header-bar">
+
+    <header class="page-header-bar" id="siteHeader">
         <a href="index.html" class="page-logo">
-            <img src="static/gambar/logo.svg" alt="DeckStation.id" style="height:44px;width:auto;">
+            <img src="static/gambar/logo.svg" alt="DeckStation.id">
         </a>
-        <nav class="page-nav">
-            <a href="index.html" class="page-nav-link ">Home</a>
-            <a href="layanan.html" class="page-nav-link ">Services</a>
-            <a href="tentang.html" class="page-nav-link ">About</a>
-            <a href="booking.html" class="page-nav-link active">Booking</a>
-            <a href="faq.html" class="page-nav-link ">FAQ</a>
-            <a href="kontak.html" class="page-nav-link ">Contact</a>
+        <nav class="page-nav" id="siteNav">
+            <a href="index.html" class="page-nav-link">Home</a>
+            <a href="layanan.html" class="page-nav-link">Services</a>
+            <a href="tentang.html" class="page-nav-link">About</a>
+            <a href="booking.html" class="page-nav-link">Booking</a>
+            <a href="faq.html" class="page-nav-link">FAQ</a>
+            <a href="kontak.html" class="page-nav-link">Contact</a>
         </nav>
         <div class="page-header-right">
-            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">
+                <i data-lucide="message-circle"></i><span>WhatsApp</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
     </header>
 
     <main>
-        
-<section class="success-page fade-in">
-    <div class="check">✅</div>
-    <h1>Booking Submitted!</h1>
-    <p>
-        Thank you <span id="nama">you</span>! Your booking has been received.
-        We will confirm the pickup schedule via WhatsApp within 24 hours.
-    </p>
-    <p style="font-size:14px;color:#555;margin-bottom:30px;">
-        <strong>WhatsApp:</strong> 0856-0289-7420<br>
-        <strong>Service:</strong> <span id="layanan">—</span><br>
-        <strong>Date:</strong> <span id="tanggal">—</span>
-    </p>
-    <a href="index.html" class="btn btn-outline">Back to Home</a>
-    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20sudah%20booking%20via%20website%2C%20berikut%20detail%20saya%3A" class="btn btn-wa" style="margin-left:10px;" target="_blank" rel="noopener">Confirm via WhatsApp</a>
-</section>
+
+        <section class="success-page fade-in">
+            <div class="icon-badge" style="width:76px;height:76px;font-size:36px;border-radius:20px;"><i data-lucide="circle-check"></i></div>
+            <h1>Booking Submitted!</h1>
+            <p>
+                Thank you <span id="nama">you</span>! Your booking has been received.
+                We will confirm the pickup schedule via WhatsApp within 24 hours.
+            </p>
+            <p style="font-size:14px;color:#a8a8a8;margin-bottom:30px;">
+                <strong>WhatsApp:</strong> 0856-0289-7420<br>
+                <strong>Service:</strong> <span id="layanan">&mdash;</span><br>
+                <strong>Date:</strong> <span id="tanggal">&mdash;</span>
+            </p>
+            <div class="cta-actions" style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+                <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20sudah%20booking%20via%20website%2C%20berikut%20detail%20saya%3A" id="successWa" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Confirm via WhatsApp</a>
+            </div>
+        </section>
+
+        <section style="margin-bottom:60px;">
+            <div class="section-head">
+                <div class="eyebrow">What Happens Next</div>
+                <h2>Three steps from here</h2>
+                <p>Nothing else is needed from you for now — we will take it from here.</p>
+            </div>
+            <ol class="steps">
+                <li class="step-item fade-in">
+                    <div class="step-num">01</div>
+                    <h3>We review your request</h3>
+                    <p>Our technician checks the model and symptoms, and prepares an initial diagnosis with an estimated price range.</p>
+                </li>
+                <li class="step-item fade-in">
+                    <div class="step-num">02</div>
+                    <h3>We confirm via WhatsApp</h3>
+                    <p>Within 24 hours we message you to confirm the diagnosis, the final estimate and the pickup schedule.</p>
+                </li>
+                <li class="step-item fade-in">
+                    <div class="step-num">03</div>
+                    <h3>Pickup, repair &amp; delivery</h3>
+                    <p>We collect the unit, repair it with warranty, test it fully, and deliver it back ready for your next set.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <div class="band-cta">
+                <div>
+                    <h2>Need to add another equipment?</h2>
+                    <p>You can send a separate booking for each unit, or message us on WhatsApp with all the details in one go.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="booking.html" class="btn btn-wa"><i data-lucide="calendar-check"></i> New Booking</a>
+                    <a href="layanan.html" class="btn btn-outline">See All Services</a>
+                </div>
+            </div>
+        </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 <a href="index.html">DeckStation.id</a> — PRO Audio Repair Specialist. All rights reserved.</p>
-        <p style="margin-top:5px;font-size:12px;color:rgba(255,255,255,0.4);">Serving all Bali area</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="static/gambar/logo.svg" alt="DeckStation.id" class="footer-logo">
+                <p>Independent DJ &amp; Pro Audio equipment repair and maintenance workshop serving clubs, beach clubs, event organisers and rental providers across Bali.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="layanan.html">All-In Equipment Repair</a></li>
+                    <li><a href="layanan.html">Audio System Maintenance</a></li>
+                    <li><a href="layanan.html">Installation &amp; Rental</a></li>
+                    <li><a href="layanan.html">All Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="tentang.html">About Us</a></li>
+                    <li><a href="booking.html">Book a Service</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="kontak.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li><i data-lucide="phone"></i> <a href="https://wa.me/6285602897420">0856-0289-7420</a></li>
+                    <li><i data-lucide="mail"></i> <a href="mailto:kenapayaa86@gmail.com">kenapayaa86@gmail.com</a></li>
+                    <li><i data-lucide="clock"></i> Mon&ndash;Sat 09:00&ndash;20:00</li>
+                    <li><i data-lucide="map-pin"></i> Serving all Bali area</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <a href="index.html">DeckStation.id</a> &mdash; PRO Audio Repair Specialist. All rights reserved.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp" aria-label="Chat WhatsApp"><i data-lucide="message-circle"></i></a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const params = new URLSearchParams(window.location.search);
-            const nama = params.get('nama');
-            const layanan = params.get('layanan');
-            const tanggal = params.get('tanggal');
-            if (nama) document.getElementById('nama').textContent = nama;
-            if (layanan) document.getElementById('layanan').textContent = layanan;
-            if (tanggal) document.getElementById('tanggal').textContent = tanggal;
-        });
-    </script>
+    <script src="static/js/lucide.min.js"></script>
+    <script src="static/js/site.js"></script>
 </body>
 </html>

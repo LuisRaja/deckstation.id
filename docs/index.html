@@ -1,117 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeckStation.id — PRO Audio Repair Specialist</title>
     <meta name="description" content="Independent repair and maintenance service for DJ & Pro Audio equipment in Bali. CDJ, DJM, Technics SL-1200.">
+    <meta property="og:title" content="DeckStation.id — PRO Audio Repair Specialist">
+    <meta property="og:description" content="Independent repair and maintenance service for DJ & Pro Audio equipment in Bali.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deckstation.id">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="static/gambar/logo.svg">
 
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --bg: #000000;
-            --card-bg: rgba(18,18,20,0.7);
-            --blue: #ffffff;
-            --text: #ffffff;
-            --sub: #a0a0a5;
-            --border: rgba(255,255,255,0.08);
-        }
-
-        html {
-            scroll-behavior: smooth;
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background: var(--bg);
-            overflow-x: hidden;
-        }
-
-        /* ─── HEADER ─── */
-        .site-header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            align-items: center;
-            padding: 12px 40px;
-            z-index: 100;
-            background: rgba(0,0,0,0.25);
-            backdrop-filter: blur(6px);
-            transition: background 0.3s;
-        }
-
-        .site-header:hover {
-            background: rgba(0,0,0,0.5);
-        }
-
-        .header-logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .header-logo img {
-            height: 44px;
-            width: auto;
-            display: block;
-        }
-
-        .header-nav {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            justify-self: center;
-        }
-
-        .header-nav a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            padding: 6px 14px;
-            border: 1px solid transparent;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .header-nav a:hover,
-        .header-nav a.active {
-            color: #fff;
-            border-color: rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.06);
-        }
-
-        .header-wa {
-            justify-self: end;
-        }
-
-        .header-wa a {
-            background: #25D366;
-            color: #fff;
-            padding: 6px 18px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 12px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .header-wa a:hover {
-            background: #1da851;
-            transform: translateY(-1px);
-        }
-
-        /* ─── HERO (GIF) ─── */
+        /* ─── HERO (VIDEO) ─── */
         .hero-gif {
             position: relative;
             width: 100%;
@@ -121,7 +28,6 @@
             background: #000;
         }
 
-        .hero-gif img,
         .hero-gif video {
             width: 100%;
             height: 100%;
@@ -172,316 +78,247 @@
             60% { transform: translateY(3px) rotate(45deg); }
         }
 
-        /* ─── SECOND PAGE ─── */
-        .second-page {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .second-page-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: fill;
-            z-index: 0;
-        }
-
-        .second-page .sp-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 100px 30px 40px;
-            max-width: 900px;
-        }
-
-        .second-page .sp-content .label {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--blue);
-            margin-bottom: 12px;
-        }
-
-        .second-page .sp-content h2 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .second-page .sp-content p {
-            font-size: 16px;
-            color: rgba(255,255,255,0.75);
-            line-height: 1.8;
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .second-page .sp-content .btn-sp {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 36px;
-            background: var(--blue);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .second-page .sp-content .btn-sp:hover {
-            background: #333;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255,255,255,0.3);
-        }
-
-        /* ─── MAIN CONTENT ─── */
-        .main-content {
+        /* ─── HOME SECTIONS ─── */
+        .home-section {
             max-width: 1200px;
             margin: 0 auto;
             padding: 80px 30px;
         }
 
-        .section-sub {
-            color: var(--blue);
-            font-size: 12px;
+        .home-section .section-head {
+            margin-bottom: 40px;
+        }
+
+        /* baris 3 card horizontal: dari tepi kiri sampai tepi kanan layar */
+        .home-preview-full {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            padding: 0 30px;
+        }
+
+        .home-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-bottom: 30px;
+        }
+
+        .home-preview {
+            display: block;
+            text-decoration: none;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 26px 24px;
+            transition: all 0.3s ease;
+        }
+
+        .home-preview:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.28);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+        }
+
+        .home-preview .icon-badge {
+            width: 46px;
+            height: 46px;
+            font-size: 22px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .home-preview h3 {
+            font-size: 16px;
             font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-align: center;
+            color: #fff;
             margin-bottom: 8px;
         }
 
-        .section-title {
-            font-size: 36px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 50px;
+        .home-preview p {
+            font-size: 13.5px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 14px;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 100px;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255,255,255,0.4);
-            box-shadow: 0 15px 30px rgba(255,255,255,0.1);
-        }
-
-        .service-card .img-wrap {
-            height: 220px;
-            overflow: hidden;
-            background: #0a0a0c;
-        }
-
-        .service-card .img-wrap img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .service-card:hover .img-wrap img { transform: scale(1.08); }
-
-        .service-card .body { padding: 30px; }
-
-        .service-card .body h3 {
-            font-size: 20px; font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .service-card .body p {
-            color: var(--sub); font-size: 14px;
-            line-height: 1.7; margin-bottom: 25px;
-        }
-
-        .btn-card {
+        .home-preview .more {
             display: inline-flex;
-            align-items: center; gap: 8px;
-            background: rgba(255,255,255,0.06);
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600; font-size: 13px;
-            transition: all 0.3s ease;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #e2e2e2;
         }
 
-        .btn-card:hover {
-            background: var(--blue);
-            border-color: var(--blue);
-            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        @media (max-width: 900px) {
+            .home-preview-full {
+                padding: 0 20px;
+            }
+
+            .home-preview-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        /* ─── WHY ─── */
-        .why-container {
-            background: linear-gradient(180deg, rgba(15,15,18,0.8), rgba(5,5,5,0.9));
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin-bottom: 100px;
-        }
+        @media (max-width: 768px) {
+            .home-section {
+                padding: 50px 15px;
+            }
 
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-        }
-
-        .why-item { display: flex; flex-direction: column; align-items: flex-start; }
-
-        .why-icon {
-            width: 50px; height: 50px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px; margin-bottom: 20px;
-        }
-
-        .why-item h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-        .why-item p { color: var(--sub); font-size: 13px; line-height: 1.6; }
-
-        /* ─── CTA ─── */
-        .cta-box {
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(0,0,0,0.5));
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 20px;
-            padding: 60px 30px;
-            margin-bottom: 60px;
-        }
-
-        .cta-box h2 { font-size: 32px; font-weight: 800; margin-bottom: 15px; }
-        .cta-box p { color: var(--sub); font-size: 16px; margin-bottom: 30px; max-width: 600px; margin: 0 auto 30px; }
-
-        .cta-actions { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-
-        .btn-cta-p {
-            background: #25D366; color: #fff;
-            padding: 14px 32px; border-radius: 8px;
-            font-weight: 700; font-size: 15px;
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-cta-p:hover { box-shadow: 0 6px 25px rgba(37,211,102,0.5); transform: translateY(-2px); }
-
-        .btn-cta-s {
-            background: transparent; color: #fff;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 14px 32px; border-radius: 8px;
-            font-weight: 600; font-size: 15px;
-            text-decoration: none; transition: all 0.3s ease;
-        }
-
-        .btn-cta-s:hover { border-color: var(--blue); color: var(--blue); }
-
-        /* ─── FOOTER ─── */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 40px 20px;
-            text-align: center;
-            color: var(--sub);
-            font-size: 13px;
-        }
-        footer a { color: #fff; text-decoration: none; }
-
-        /* ─── FLOATING WA ─── */
-        .float-wa {
-            position: fixed; bottom: 30px; right: 30px;
-            width: 60px; height: 60px;
-            background: #25D366; color: #fff;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
-            z-index: 100;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .float-wa:hover { transform: scale(1.1); box-shadow: 0 8px 25px rgba(37,211,102,0.6); }
-
-        /* ─── RESPONSIVE ─── */
-        @media (max-width: 992px) {
-            .site-header { padding: 10px 20px; }
-            .header-logo img { height: 30px; }
-            .header-nav { gap: 4px; }
-            .header-nav a { font-size: 10px; padding: 4px 8px; letter-spacing: 0; }
-            .header-wa a { font-size: 10px; padding: 4px 12px; }
-            .section-title { font-size: 28px; }
-            .second-page .sp-content h2 { font-size: 32px; }
-        }
-
-        @media (max-width: 640px) {
-            .header-nav a { font-size: 9px; padding: 3px 6px; }
-            .header-wa { display: none; }
-            .site-header { padding: 8px 12px; grid-template-columns: auto 1fr; }
-            .header-logo img { height: 28px; }
-            .second-page .sp-content h2 { font-size: 24px; }
-            .second-page .sp-content p { font-size: 14px; }
-            .second-page .sp-content .label { font-size: 11px; }
-            .main-content { padding: 50px 15px; }
-            .float-wa { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
+            .home-preview-full {
+                padding: 0 15px;
+            }
         }
     </style>
 </head>
-<body>
+<body class="home-page">
 
-    <!-- ─── HEADER ─── -->
-    <header class="site-header">
-        <a href="/" class="header-logo">
+
+    <header class="page-header-bar is-transparent" id="siteHeader">
+        <a href="index.html" class="page-logo">
             <img src="static/gambar/logo.svg" alt="DeckStation.id">
         </a>
-        <nav class="header-nav">
-            <a href="index.html" class="active">Home</a>
-            <a href="layanan.html">Services</a>
-            <a href="tentang.html">About</a>
-            <a href="booking.html">Booking</a>
-            <a href="faq.html">FAQ</a>
-            <a href="kontak.html">Contact</a>
+        <nav class="page-nav" id="siteNav">
+            <a href="index.html" class="page-nav-link active">Home</a>
+            <a href="layanan.html" class="page-nav-link">Services</a>
+            <a href="tentang.html" class="page-nav-link">About</a>
+            <a href="booking.html" class="page-nav-link">Booking</a>
+            <a href="faq.html" class="page-nav-link">FAQ</a>
+            <a href="kontak.html" class="page-nav-link">Contact</a>
         </nav>
-        <div class="header-wa">
-            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" target="_blank" rel="noopener">WhatsApp</a>
+        <div class="page-header-right">
+            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">
+                <i data-lucide="message-circle"></i><span>WhatsApp</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
     </header>
 
-    <!-- ─── HERO ─── -->
     <section class="hero-gif">
         <video autoplay muted loop playsinline>
             <source media="(max-width: 768px)" src="static/gambar/hero-section-mobile.mp4" type="video/mp4">
             <source src="static/gambar/hero-section.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
+        <a href="#services" class="scroll-down">
+            Scroll
+            <span class="arrow"></span>
+        </a>
     </section>
 
-    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+    <section class="home-section" id="services">
+        <div class="section-head">
+            <div class="eyebrow">Our Services</div>
+            <h2>Workshop repair for every part of your rig</h2>
+            <p>Players, mixers, turntables, audio gear and full on-site maintenance for clubs and rental fleets across Bali.</p>
+        </div>
 
+        <div class="home-preview-full">
+        <div class="home-preview-grid">
+            <a href="layanan.html" class="home-preview fade-in">
+                <div class="icon-badge"><i data-lucide="wrench"></i></div>
+                <h3>All-In Equipment Repair</h3>
+                <p>CDJ, DJM, power amps, DSP processors and equalizers &mdash; diagnosed, repaired and tested in one workshop.</p>
+                <span class="more">See services <i data-lucide="arrow-right"></i></span>
+            </a>
+            <a href="layanan.html" class="home-preview fade-in">
+                <div class="icon-badge"><i data-lucide="volume-2"></i></div>
+                <h3>Audio System Maintenance</h3>
+                <p>Scheduled check-ups, pre-event soundcheck and emergency support for your club, restaurant or space.</p>
+                <span class="more">See services <i data-lucide="arrow-right"></i></span>
+            </a>
+            <a href="layanan.html" class="home-preview fade-in">
+                <div class="icon-badge"><i data-lucide="package"></i></div>
+                <h3>Installation &amp; Rental</h3>
+                <p>New system installation, plus DJ gear, speakers, lighting and laser rental for your event.</p>
+                <span class="more">See services <i data-lucide="arrow-right"></i></span>
+            </a>
+        </div>
+        </div>
+
+        <div style="text-align:center;margin-bottom:70px;">
+            <a href="layanan.html" class="btn btn-outline">View All 5 Services</a>
+        </div>
+
+        <div class="stat-strip">
+            <div class="stat-item fade-in">
+                <div class="value">Bali-wide</div>
+                <div class="label">Pickup &amp; Delivery</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="value">&lt; 24h</div>
+                <div class="label">Booking Response</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="value">1&ndash;3 days</div>
+                <div class="label">Standard Turnaround</div>
+            </div>
+            <div class="stat-item fade-in">
+                <div class="value">Warranty</div>
+                <div class="label">On Every Repair</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-section" style="padding-top:0;">
+        <div class="band-cta">
+            <div>
+                <h2>Ready to book your service?</h2>
+                <p>Send your equipment details and we will come back with a diagnosis, a timeline and a clear estimate within 24 hours.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="booking.html" class="btn btn-wa"><i data-lucide="calendar-check"></i> Book a Service</a>
+                <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="btn btn-outline" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="static/gambar/logo.svg" alt="DeckStation.id" class="footer-logo">
+                <p>Independent DJ &amp; Pro Audio equipment repair and maintenance workshop serving clubs, beach clubs, event organisers and rental providers across Bali.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="layanan.html">All-In Equipment Repair</a></li>
+                    <li><a href="layanan.html">Audio System Maintenance</a></li>
+                    <li><a href="layanan.html">Installation &amp; Rental</a></li>
+                    <li><a href="layanan.html">All Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="tentang.html">About Us</a></li>
+                    <li><a href="booking.html">Book a Service</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="kontak.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li><i data-lucide="phone"></i> <a href="https://wa.me/6285602897420">0856-0289-7420</a></li>
+                    <li><i data-lucide="mail"></i> <a href="mailto:kenapayaa86@gmail.com">kenapayaa86@gmail.com</a></li>
+                    <li><i data-lucide="clock"></i> Mon&ndash;Sat 09:00&ndash;20:00</li>
+                    <li><i data-lucide="map-pin"></i> Serving all Bali area</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <a href="index.html">DeckStation.id</a> &mdash; PRO Audio Repair Specialist. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp" aria-label="Chat WhatsApp"><i data-lucide="message-circle"></i></a>
+
+    <script src="static/js/lucide.min.js"></script>
+    <script src="static/js/site.js"></script>
 </body>
 </html>

@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add('js');</script>
     <title>{% block title %}DeckStation.id — PRO Audio Repair Specialist{% endblock %}</title>
     <meta name="description" content="{% block meta_desc %}Independent repair & maintenance service for DJ & Pro Audio equipment in Bali. CDJ, DJM, Technics SL-1200, and on-site maintenance.{% endblock %}">
     <meta property="og:title" content="{% block og_title %}DeckStation.id — PRO Audio Repair Specialist{% endblock %}">
-    <meta property="og:description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali.">
+    <meta property="og:description" content="{% block og_desc %}Independent repair & maintenance service for DJ & Pro Audio equipment in Bali.{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://deckstation.id">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='gambar/logo.svg') }}">
 </head>
-<body>
+<body class="sub-page">
 
-    <header class="page-header-bar">
+    <header class="page-header-bar" id="siteHeader">
         <a href="{{ url_for('home') }}" class="page-logo">
-            <img src="{{ url_for('static', filename='gambar/logo.svg') }}" alt="DeckStation.id" style="height:44px;width:auto;">
+            <img src="{{ url_for('static', filename='gambar/logo.svg') }}" alt="DeckStation.id">
         </a>
-        <nav class="page-nav">
+        <nav class="page-nav" id="siteNav">
             <a href="{{ url_for('home') }}" class="page-nav-link {% if active_nav == 'home' %}active{% endif %}">Home</a>
             <a href="{{ url_for('layanan') }}" class="page-nav-link {% if active_nav == 'layanan' %}active{% endif %}">Services</a>
             <a href="{{ url_for('tentang') }}" class="page-nav-link {% if active_nav == 'tentang' %}active{% endif %}">About</a>
@@ -27,41 +27,63 @@
             <a href="{{ url_for('kontak') }}" class="page-nav-link {% if active_nav == 'kontak' %}active{% endif %}">Contact</a>
         </nav>
         <div class="page-header-right">
-            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">
+                <i data-lucide="message-circle"></i><span>WhatsApp</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
     </header>
+
+    {% block hero %}{% endblock %}
 
     <main>
         {% block content %}{% endblock %}
     </main>
 
     <footer>
-        <p>&copy; 2026 <a href="{{ url_for('home') }}">DeckStation.id</a> — PRO Audio Repair Specialist. All rights reserved.</p>
-        <p style="margin-top:5px;font-size:12px;color:rgba(255,255,255,0.4);">Serving all Bali area</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="{{ url_for('static', filename='gambar/logo.svg') }}" alt="DeckStation.id" class="footer-logo">
+                <p>Independent DJ &amp; Pro Audio equipment repair and maintenance workshop serving clubs, beach clubs, event organisers and rental providers across Bali.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="{{ url_for('layanan') }}">CDJ &amp; DJM Repair</a></li>
+                    <li><a href="{{ url_for('layanan') }}">Technics SL-1200 Service</a></li>
+                    <li><a href="{{ url_for('layanan') }}">Mixer &amp; PA Maintenance</a></li>
+                    <li><a href="{{ url_for('layanan') }}">All Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="{{ url_for('tentang') }}">About Us</a></li>
+                    <li><a href="{{ url_for('booking') }}">Book a Service</a></li>
+                    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+                    <li><a href="{{ url_for('kontak') }}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li><i data-lucide="phone"></i> <a href="https://wa.me/6285602897420">0856-0289-7420</a></li>
+                    <li><i data-lucide="mail"></i> <a href="mailto:kenapayaa86@gmail.com">kenapayaa86@gmail.com</a></li>
+                    <li><i data-lucide="clock"></i> Mon&ndash;Sat 09:00&ndash;20:00</li>
+                    <li><i data-lucide="map-pin"></i> Serving all Bali area</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <a href="{{ url_for('home') }}">DeckStation.id</a> &mdash; PRO Audio Repair Specialist. All rights reserved.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp" aria-label="Chat WhatsApp"><i data-lucide="message-circle"></i></a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeEls = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.15 });
-            fadeEls.forEach(el => observer.observe(el));
-
-            document.querySelectorAll('.faq-question').forEach(q => {
-                q.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    const answer = this.nextElementSibling;
-                    answer.classList.toggle('open');
-                });
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/lucide.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/site.js') }}"></script>
 </body>
 </html>

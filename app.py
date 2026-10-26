@@ -12,6 +12,8 @@ load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "deckstation-fallback-secret-key")
+# reload Jinja templates on change (convenient for local preview)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # ─── EMAIL CONFIG ───────────────────────────────────────
 SMTP_SERVER = "smtp.gmail.com"
@@ -20,7 +22,6 @@ EMAIL_SENDER = os.getenv("EMAIL_SENDER")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_RECEIVERS = [
     os.getenv("EMAIL_RECEIVER_1"),
-    os.getenv("EMAIL_RECEIVER_2"),
 ]
 
 # ─── GOOGLE CALENDAR ────────────────────────────────────
@@ -62,26 +63,28 @@ def send_email_booking(data: dict) -> bool:
 
     html = f"""
     <html>
-    <body style="font-family:Inter,sans-serif;background:#f4f4f4;padding:30px;">
-        <div style="max-width:600px;margin:auto;background:#fff;border-radius:8px;padding:30px;border:1px solid #ddd;">
-            <h2 style="color:#000;margin:0 0 20px 0;">🎧 New Booking — DeckStation.id</h2>
+    <body style="font-family:Inter,sans-serif;background:#000000;padding:30px;">
+        <div style="max-width:600px;margin:auto;background:#121212;border-radius:8px;padding:30px;border:1px solid rgba(255,255,255,0.12);">
+            <h2 style="color:#ffffff;margin:0 0 20px 0;">New Booking — DeckStation.id</h2>
             <table style="width:100%;border-collapse:collapse;">
-                <tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:700;">Name</td>
-                    <td style="padding:10px;border-bottom:1px solid #eee;">{data.get('nama', '—')}</td></tr>
-                <tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:700;">WhatsApp</td>
-                    <td style="padding:10px;border-bottom:1px solid #eee;">{data.get('wa', '—')}</td></tr>
-                <tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:700;">Service</td>
-                    <td style="padding:10px;border-bottom:1px solid #eee;">{data.get('layanan', '—')}</td></tr>
-                <tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:700;">Issue</td>
-                    <td style="padding:10px;border-bottom:1px solid #eee;">{data.get('keluhan', '—')}</td></tr>
-                <tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:700;">Pickup Address</td>
-                    <td style="padding:10px;border-bottom:1px solid #eee;">{data.get('alamat', '—')}</td></tr>
-                <tr><td style="padding:10px;border-bottom:1px solid #eee;font-weight:700;">Date</td>
-                    <td style="padding:10px;border-bottom:1px solid #eee;">{data.get('tanggal', '—')}</td></tr>
-                <tr><td style="padding:10px;font-weight:700;">Booking Time</td>
-                    <td style="padding:10px;">{now}</td></tr>
+                <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);font-weight:700;color:#ffffff;">Name</td>
+                    <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#a8a8a8;">{data.get('nama', '—')}</td></tr>
+                <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);font-weight:700;color:#ffffff;">WhatsApp</td>
+                    <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#a8a8a8;">{data.get('wa', '—')}</td></tr>
+                <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);font-weight:700;color:#ffffff;">Service</td>
+                    <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#a8a8a8;">{data.get('layanan', '—')}</td></tr>
+                <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);font-weight:700;color:#ffffff;">Equipment</td>
+                    <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#a8a8a8;">{data.get('equipment', '—')}</td></tr>
+                <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);font-weight:700;color:#ffffff;">Issue</td>
+                    <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#a8a8a8;">{data.get('keluhan', '—')}</td></tr>
+                <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);font-weight:700;color:#ffffff;">Pickup Address</td>
+                    <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.12);color:#a8a8a8;">{data.get('alamat', '—')}</td></tr>
+                <tr><td style="padding:10px;font-weight:700;color:#ffffff;">Date</td>
+                    <td style="padding:10px;color:#a8a8a8;">{data.get('tanggal', '—')}</td></tr>
+                <tr><td style="padding:10px;font-weight:700;color:#ffffff;">Booking Time</td>
+                    <td style="padding:10px;color:#a8a8a8;">{now}</td></tr>
             </table>
-            <p style="margin-top:25px;font-size:13px;color:#888;">
+            <p style="margin-top:25px;font-size:13px;color:#8a8a8a;">
                 This email was sent automatically from the DeckStation.id booking system
             </p>
         </div>
@@ -173,6 +176,7 @@ def booking():
             "nama": request.form.get("nama", "").strip(),
             "wa": request.form.get("wa", "").strip(),
             "layanan": request.form.get("layanan", "").strip(),
+            "equipment": request.form.get("equipment", "").strip(),
             "keluhan": request.form.get("keluhan", "").strip(),
             "alamat": request.form.get("alamat", "").strip(),
             "tanggal": request.form.get("tanggal", "").strip(),
@@ -197,8 +201,25 @@ def faq():
     return render_template("faq.html")
 
 
-@app.route("/kontak")
+@app.route("/kontak", methods=["GET", "POST"])
 def kontak():
+    if request.method == "POST":
+        data = {
+            "nama": request.form.get("nama", "").strip(),
+            "wa": request.form.get("wa", "").strip(),
+            "layanan": request.form.get("equipment", "General Enquiry").strip() or "General Enquiry",
+            "equipment": request.form.get("equipment", "").strip(),
+            "keluhan": request.form.get("pesan", "").strip(),
+            "alamat": "",
+            "tanggal": "",
+        }
+        email_ok = send_email_booking(data)
+        return render_template(
+            "kontak.html",
+            enquiry_sent=email_ok,
+            enquiry_nama=data["nama"],
+        )
+
     return render_template("kontak.html")
 
 

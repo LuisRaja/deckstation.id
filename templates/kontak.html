@@ -3,42 +3,141 @@
 
 {% block title %}Contact — DeckStation.id | PRO Audio Repair Specialist{% endblock %}
 
+{% block meta_desc %}Contact DeckStation Bali for DJ & pro audio equipment repair. WhatsApp 0856-0289-7420, email, on-site service across all Bali area.{% endblock %}
+
+{% block hero %}
+<section class="page-hero">
+        <img class="page-hero-bg" src="{{ url_for('static', filename='gambar/CDJ 3000 ANGLE.webp') }}" alt="Pioneer CDJ player">
+        <div class="page-hero-inner">
+            <nav class="breadcrumb">
+                <a href="{{ url_for('home') }}">Home</a>
+                <span class="sep">/</span>
+                <span>Contact</span>
+            </nav>
+            <div class="eyebrow">Get In Touch</div>
+            <h1>Contact Us</h1>
+            <p>We are ready to help. Send your equipment details and we will reply within 24 hours with a diagnosis, a timeline and an honest estimate.</p>
+        </div>
+    </section>
+{% endblock %}
+
 {% block content %}
-<div class="page-header fade-in">
-    <h1>Contact Us</h1>
-    <p>We are ready to help you</p>
-</div>
+<section class="feature-grid" style="margin-bottom:70px;">
+            <div class="feature-item fade-in">
+                <div class="icon-badge"><i data-lucide="message-circle"></i></div>
+                <h3>WhatsApp</h3>
+                <p>Fastest way to reach us — send photos or video of the fault for a free first diagnosis.</p>
+                <p style="margin-top:10px;"><a href="https://wa.me/6285602897420" style="color:#fff;font-weight:700;font-size:18px;">0856-0289-7420</a></p>
+                <a href="https://wa.me/6285602897420" class="btn btn-wa" style="margin-top:16px;width:100%;" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Chat Now</a>
+            </div>
 
-<section class="contact-section fade-in" style="max-width:600px;margin:0 auto;">
-    <div style="background:#fff;padding:40px;border-radius:8px;border:1px solid #e0e0e0;box-shadow:0 2px 15px rgba(0,0,0,0.06);">
-        <div style="margin-bottom:30px;">
-            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">WhatsApp</h3>
-            <p style="font-size:20px;font-weight:600;color:#000;">0856-0289-7420</p>
-            <p style="font-size:13px;color:#555;margin-top:4px;">Fast response, replies within 24 hours</p>
-            <a href="https://wa.me/6285602897420" class="btn btn-wa" style="margin-top:15px;" target="_blank" rel="noopener">💬 Chat Now</a>
-        </div>
+            <div class="feature-item fade-in">
+                <div class="icon-badge"><i data-lucide="mail"></i></div>
+                <h3>Email</h3>
+                <p>Best for detailed descriptions, serial numbers, or sending photos and documents of your equipment.</p>
+                <ul class="spec-list" style="margin-top:10px;">
+                    <li><i data-lucide="check"></i> <a href="mailto:kenapayaa86@gmail.com" style="color:#fff;">kenapayaa86@gmail.com</a></li>
+                </ul>
+            </div>
 
-        <hr style="border:none;border-top:1px solid #e0e0e0;margin:25px 0;">
+            <div class="feature-item fade-in">
+                <div class="icon-badge"><i data-lucide="map-pin"></i></div>
+                <h3>Service Area</h3>
+                <p>Call-out service — we come to your location for pickup and delivery of equipment anywhere in Bali, or work on-site at your venue.</p>
+                <ul class="spec-list" style="margin-top:10px;">
+                    <li><i data-lucide="check"></i> Pickup &amp; delivery, all Bali area</li>
+                    <li><i data-lucide="check"></i> On-site maintenance at your venue</li>
+                </ul>
+            </div>
+        </section>
 
-        <div style="margin-bottom:30px;">
-            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Email</h3>
-            <p style="font-size:15px;color:#000;">kenapayaa86@gmail.com</p>
-            <p style="font-size:15px;color:#000;">louyzhradja86@gmail.com</p>
-        </div>
+        <section style="margin-bottom:70px;">
+            <div class="section-head">
+                <div class="eyebrow">Opening Hours</div>
+                <h2>When you can reach us</h2>
+                <p>Bookings are confirmed within 24 hours during working days.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-item fade-in">
+                    <div class="icon-badge sm"><i data-lucide="clock"></i></div>
+                    <h3>Monday &ndash; Saturday</h3>
+                    <p>09:00 &ndash; 20:00 (WITA). Service, pickup and delivery slots available throughout the day.</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="icon-badge sm"><i data-lucide="calendar-check"></i></div>
+                    <h3>Sunday</h3>
+                    <p>By appointment only. Emergency support for event days can be arranged in advance.</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="icon-badge sm"><i data-lucide="zap"></i></div>
+                    <h3>Event Days</h3>
+                    <p>Priority handling for club and event emergencies. Message us with your deadline and we will plan around it.</p>
+                </div>
+            </div>
+        </section>
 
-        <hr style="border:none;border-top:1px solid #e0e0e0;margin:25px 0;">
+        <section style="margin-bottom:70px;">
+            <div class="section-head">
+                <div class="eyebrow">Coverage</div>
+                <h2>Where we operate</h2>
+                <p>Pickup and delivery are available across every regency and district in Bali.</p>
+            </div>
+            <div class="coverage-grid">
+                <div class="coverage-item"><i data-lucide="map-pin"></i> Denpasar</div>
+                <div class="coverage-item"><i data-lucide="map-pin"></i> Badung</div>
+                <div class="coverage-item"><i data-lucide="map-pin"></i> Gianyar</div>
+                <div class="coverage-item"><i data-lucide="map-pin"></i> Tabanan</div>
+                <div class="coverage-item"><i data-lucide="map-pin"></i> Klungkung</div>
+                <div class="coverage-item"><i data-lucide="map-pin"></i> Bangli</div>
+                <div class="coverage-item"><i data-lucide="map-pin"></i> Jembrana</div>
+                <div class="coverage-item"><i data-lucide="map-pin"></i> Nusa Penida</div>
+            </div>
+        </section>
 
-        <div>
-            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Service Area</h3>
-            <p style="font-size:14px;color:#555;line-height:1.7;">
-                <strong>Call-Out Service</strong> — Covering all Bali area<br>
-                We come to your location for pickup & delivery of equipment.
-            </p>
-            <p style="font-size:14px;color:#555;margin-top:10px;">
-                ⏰ Monday - Saturday: 09:00 - 20:00<br>
-                ⏰ Sunday: By appointment
-            </p>
-        </div>
-    </div>
-</section>
+        <section style="margin-bottom:60px;">
+            <div class="section-head">
+                <div class="eyebrow">Quick Enquiry</div>
+                <h2>Send a short message</h2>
+                <p>For a detailed service request, use the <a href="{{ url_for('booking') }}" style="color:#fff;">booking form</a> instead — it captures the details we need to prepare.</p>
+            </div>
+            <div class="booking-form fade-in">
+                <form method="POST" action="{{ url_for('kontak') }}">
+                    <div class="form-group">
+                        <label for="nama">Your Name <span class="required">*</span></label>
+                        <input type="text" id="nama" name="nama" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="wa">WhatsApp Number <span class="required">*</span></label>
+                        <input type="tel" id="wa" name="wa" required placeholder="08xxxxxxxxxx" pattern="[0-9]+">
+                    </div>
+                    <div class="form-group">
+                        <label for="equipment">Equipment</label>
+                        <input type="text" id="equipment" name="equipment" placeholder="e.g. Pioneer CDJ-3000, DJM-900NXS2, Technics SL-1200MK2">
+                    </div>
+                    <div class="form-group">
+                        <label for="pesan">Message <span class="required">*</span></label>
+                        <textarea id="pesan" name="pesan" required placeholder="Tell us what you need help with..."></textarea>
+                    </div>
+                    <div class="form-group" style="margin-top:10px;">
+                        {% if enquiry_sent %}<div class="callout" style="margin-bottom:20px;"><i data-lucide="circle-check"></i><div><h3>Message sent</h3><p>Thank you{% if enquiry_nama %}, {{ enquiry_nama }}{% endif %}. We will reply within 24 hours.</p></div></div>{% endif %}
+                    <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:16px;">
+                            <i data-lucide="send"></i> Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <div class="band-cta">
+                <div>
+                    <h2>Prefer WhatsApp?</h2>
+                    <p>Message us directly and describe the fault. We will reply within 24 hours with a diagnosis, a timeline and an estimate.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Chat on WhatsApp</a>
+                    <a href="{{ url_for('booking') }}" class="btn btn-outline">Book Online</a>
+                </div>
+            </div>
+        </section>
 {% endblock %}

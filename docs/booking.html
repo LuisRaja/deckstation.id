@@ -1,142 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking — DeckStation.id | PRO Audio Repair Specialist</title>
-    <meta name="description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali. CDJ, DJM, Technics SL-1200, and on-site maintenance.">
+    <meta name="description" content="Book a DJ or pro audio equipment repair, calibration or on-site maintenance in Bali. Free diagnosis, clear estimate and service warranty.">
     <meta property="og:title" content="DeckStation.id — PRO Audio Repair Specialist">
     <meta property="og:description" content="Independent repair & maintenance service for DJ & Pro Audio equipment in Bali.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://deckstation.id">
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="static/gambar/logo.svg">
 </head>
-<body>
+<body class="sub-page">
 
-    <header class="page-header-bar">
+
+    <header class="page-header-bar" id="siteHeader">
         <a href="index.html" class="page-logo">
-            <img src="static/gambar/logo.svg" alt="DeckStation.id" style="height:44px;width:auto;">
+            <img src="static/gambar/logo.svg" alt="DeckStation.id">
         </a>
-        <nav class="page-nav">
-            <a href="index.html" class="page-nav-link ">Home</a>
-            <a href="layanan.html" class="page-nav-link ">Services</a>
-            <a href="tentang.html" class="page-nav-link ">About</a>
+        <nav class="page-nav" id="siteNav">
+            <a href="index.html" class="page-nav-link">Home</a>
+            <a href="layanan.html" class="page-nav-link">Services</a>
+            <a href="tentang.html" class="page-nav-link">About</a>
             <a href="booking.html" class="page-nav-link active">Booking</a>
-            <a href="faq.html" class="page-nav-link ">FAQ</a>
-            <a href="kontak.html" class="page-nav-link ">Contact</a>
+            <a href="faq.html" class="page-nav-link">FAQ</a>
+            <a href="kontak.html" class="page-nav-link">Contact</a>
         </nav>
         <div class="page-header-right">
-            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="page-wa-btn" target="_blank" rel="noopener">
+                <i data-lucide="message-circle"></i><span>WhatsApp</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
     </header>
 
+    <section class="page-hero">
+        <img class="page-hero-bg" src="static/gambar/DJM A9.png" alt="Pioneer DJM mixer">
+        <div class="page-hero-inner">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span>Booking</span>
+            </nav>
+            <div class="eyebrow">Schedule a Service</div>
+            <h1>Book a Service</h1>
+            <p>Fill out the form and we will confirm availability, pickup schedule and an estimated timeline within 24 hours. Free diagnosis on every booking.</p>
+        </div>
+    </section>
+
     <main>
-        
-<div class="page-header fade-in">
-    <h1>Book a Service</h1>
-    <p>Fill out the form below to schedule a repair or maintenance for your equipment</p>
-</div>
 
-<div class="booking-form fade-in">
-    <form method="POST" action="https://formsubmit.co/kenapayaa86@gmail.com">
-        <input type="hidden" name="_subject" value="New Booking — DeckStation.id">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_cc" value="louyzhradja86@gmail.com">
-        <input type="hidden" name="_next" value="sukses.html?nama={nama}&layanan={layanan}&tanggal={tanggal}">
-        <div class="form-group">
-            <label for="nama">Full Name <span class="required">*</span></label>
-            <input type="text" id="nama" name="nama" required placeholder="Enter your name">
+        <section class="booking-full">
+        <div class="booking-layout">
+
+        <div class="booking-info">
+
+            <section class="fade-in">
+                <div class="section-head align-left">
+                    <div class="eyebrow">How It Works</div>
+                    <h2>3 steps to get your gear fixed</h2>
+                </div>
+                <ol class="steps steps-stack">
+                    <li class="step-item fade-in">
+                        <div class="step-num">01</div>
+                        <h3>Fill the form</h3>
+                        <p>Tell us the equipment, the problem and when you need it back.</p>
+                    </li>
+                    <li class="step-item fade-in">
+                        <div class="step-num">02</div>
+                        <h3>We confirm</h3>
+                        <p>We reply within 24 hours with the schedule, estimate and pickup details.</p>
+                    </li>
+                    <li class="step-item fade-in">
+                        <div class="step-num">03</div>
+                        <h3>Pickup &amp; repair</h3>
+                        <p>We collect the unit, diagnose it, and you approve the quote before work starts.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section style="margin-top:38px;">
+                <div class="feature-grid">
+                    <div class="feature-item fade-in">
+                        <div class="icon-badge sm"><i data-lucide="message-circle"></i></div>
+                        <h3>Free consultation</h3>
+                        <p>No charge for diagnosis advice. Send photos and video of the fault and we will tell you the likely cause.</p>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="icon-badge sm"><i data-lucide="shield-check"></i></div>
+                        <h3>Service warranty</h3>
+                        <p>Every completed repair carries a warranty. If the same fault returns, we check it again at no extra cost.</p>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="icon-badge sm"><i data-lucide="truck"></i></div>
+                        <h3>Pickup across Bali</h3>
+                        <p>We collect and return your equipment anywhere in Bali, or work on-site at your venue.</p>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="icon-badge sm"><i data-lucide="timer"></i></div>
+                        <h3>Response in 24 hours</h3>
+                        <p>Bookings are answered within one working day, with a written scope before work begins.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top:38px;">
+                <div class="callout">
+                    <i data-lucide="clipboard-list"></i>
+                    <div>
+                        <h3>What to prepare before pickup</h3>
+                        <ul>
+                            <li><i data-lucide="check"></i> Brand, model and serial number of each unit</li>
+                            <li><i data-lucide="check"></i> Short description or video of the fault</li>
+                            <li><i data-lucide="check"></i> Accessories included (power cable, flight case, link cables)</li>
+                            <li><i data-lucide="check"></i> Your event or deadline date, so we can prioritise</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
-        <div class="form-group">
-            <label for="wa">WhatsApp Number <span class="required">*</span></label>
-            <input type="tel" id="wa" name="wa" required placeholder="08xxxxxxxxxx" pattern="[0-9]+">
-            <div class="hint">Keep notifications on for booking confirmation</div>
+        <div class="booking-main">
+        <div class="booking-form fade-in">
+            <form method="POST" action="https://formsubmit.co/kenapayaa86@gmail.com">
+                <input type="hidden" name="_subject" value="New Booking — DeckStation.id">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="sukses.html?nama={nama}&layanan={layanan}&tanggal={tanggal}">
+                <div class="form-group">
+                    <label for="nama">Full Name <span class="required">*</span></label>
+                    <input type="text" id="nama" name="nama" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="wa">WhatsApp Number <span class="required">*</span></label>
+                    <input type="tel" id="wa" name="wa" required placeholder="08xxxxxxxxxx" pattern="[0-9]+">
+                    <div class="hint">Keep notifications on for booking confirmation</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="layanan">Service <span class="required">*</span></label>
+                    <select id="layanan" name="layanan" required>
+                        <option value="">— Select Service —</option>
+                        <option value="All-In Repair">All-In Equipment Repair (CDJ, DJM, Amps, DSP, EQ)</option>
+                        <option value="Audio Maintenance">Club &amp; Venue Audio Maintenance</option>
+                        <option value="Audio Installation">Audio System Installation</option>
+                        <option value="Equipment Rental">DJ Gear &amp; Event Rental</option>
+                        <option value="Pro Audio Consultation">Pro Audio Consultation</option>
+                        <option value="Lainnya">Other (describe in issues)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="equipment">Equipment Model <span class="required">*</span></label>
+                    <input type="text" id="equipment" name="equipment" required placeholder="e.g. Pioneer CDJ-3000 x2, DJM-900NXS2, Technics SL-1200MK2">
+                </div>
+
+                <div class="form-group">
+                    <label for="keluhan">Issue Description <span class="required">*</span></label>
+                    <textarea id="keluhan" name="keluhan" required placeholder="Describe the issue with your equipment in detail..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Pickup Address <span class="required">*</span></label>
+                    <textarea id="alamat" name="alamat" required placeholder="Enter your full address for equipment pickup. (We are a call-out service — covering all Bali area)"></textarea>
+                    <div class="hint">We are a call-out service — we will pick up your equipment from your location</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tanggal">Preferred Date &amp; Time <span class="required">*</span></label>
+                    <input type="datetime-local" id="tanggal" name="tanggal" required>
+                </div>
+
+                <div class="form-group" style="margin-top:10px;">
+                    <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:16px;">
+                        <i data-lucide="calendar-check"></i> Submit Booking
+                    </button>
+                </div>
+
+                <p style="text-align:center;margin-top:15px;font-size:13px;color:#888;">
+                    Booking data will be sent to our email.
+                    We will confirm via your WhatsApp.
+                </p>
+            </form>
+        </div>
         </div>
 
-        <div class="form-group">
-            <label for="layanan">Service <span class="required">*</span></label>
-            <select id="layanan" name="layanan" required>
-                <option value="">— Select Service —</option>
-                <option value="CDJ/DJM Repair">🎛️ CDJ/DJM Repair</option>
-                <option value="Technics SL-1200 Service">💿 Technics SL-1200 Service & Calibration</option>
-                <option value="On-Site Maintenance">📍 On-Site Maintenance</option>
-                <option value="Lainnya">Other (describe in issues)</option>
-            </select>
         </div>
+        </section>
 
-        <div class="form-group">
-            <label for="keluhan">Issue Description <span class="required">*</span></label>
-            <textarea id="keluhan" name="keluhan" required placeholder="Describe the issue with your equipment in detail..."></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="alamat">Pickup Address <span class="required">*</span></label>
-            <textarea id="alamat" name="alamat" required placeholder="Enter your full address for equipment pickup. (We are a call-out service — covering all Bali area)"></textarea>
-            <div class="hint">We are a call-out service — we will pick up your equipment from your location</div>
-        </div>
-
-        <div class="form-group">
-            <label for="tanggal">Preferred Date & Time <span class="required">*</span></label>
-            <input type="datetime-local" id="tanggal" name="tanggal" required>
-        </div>
-
-        <div style="text-align:center;margin-top:30px;">
-            <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:16px;">
-                Submit Booking
-            </button>
-        </div>
-
-        <p style="text-align:center;margin-top:15px;font-size:13px;color:#888;">
-            Booking data will be sent to our email.
-            We will confirm via your WhatsApp.
-        </p>
-    </form>
-</div>
+        <section style="margin-top:70px;">
+            <div class="band-cta">
+                <div>
+                    <h2>Prefer to talk first?</h2>
+                    <p>Message us on WhatsApp with your equipment model and the problem. We will guide you to the right service and quote.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20booking%20service%20equipment%20saya" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Chat on WhatsApp</a>
+                    <a href="layanan.html" class="btn btn-outline">See All Services</a>
+                </div>
+            </div>
+        </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 <a href="index.html">DeckStation.id</a> — PRO Audio Repair Specialist. All rights reserved.</p>
-        <p style="margin-top:5px;font-size:12px;color:rgba(255,255,255,0.4);">Serving all Bali area</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="static/gambar/logo.svg" alt="DeckStation.id" class="footer-logo">
+                <p>Independent DJ &amp; Pro Audio equipment repair and maintenance workshop serving clubs, beach clubs, event organisers and rental providers across Bali.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="layanan.html">All-In Equipment Repair</a></li>
+                    <li><a href="layanan.html">Audio System Maintenance</a></li>
+                    <li><a href="layanan.html">Installation &amp; Rental</a></li>
+                    <li><a href="layanan.html">All Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="tentang.html">About Us</a></li>
+                    <li><a href="booking.html">Book a Service</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="kontak.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul class="footer-contact">
+                    <li><i data-lucide="phone"></i> <a href="https://wa.me/6285602897420">0856-0289-7420</a></li>
+                    <li><i data-lucide="mail"></i> <a href="mailto:kenapayaa86@gmail.com">kenapayaa86@gmail.com</a></li>
+                    <li><i data-lucide="clock"></i> Mon&ndash;Sat 09:00&ndash;20:00</li>
+                    <li><i data-lucide="map-pin"></i> Serving all Bali area</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <a href="index.html">DeckStation.id</a> &mdash; PRO Audio Repair Specialist. All rights reserved.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp">💬</a>
+    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%20Bali%2C%20saya%20butuh%20info%20service" class="float-wa" target="_blank" rel="noopener" title="Chat WhatsApp" aria-label="Chat WhatsApp"><i data-lucide="message-circle"></i></a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeEls = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.15 });
-            fadeEls.forEach(el => observer.observe(el));
-
-            document.querySelectorAll('.faq-question').forEach(q => {
-                q.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    const answer = this.nextElementSibling;
-                    answer.classList.toggle('open');
-                });
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var form = document.querySelector('.booking-form form');
-            if (form) {
-                form.addEventListener('submit', function() {
-                    var layanan = form.layanan ? (form.layanan.value || 'Service') : 'Service';
-                    var nama = form.nama ? (form.nama.value || 'N/A') : 'N/A';
-                    form._subject.value = '[New Booking] ' + layanan + ' - ' + nama;
-                });
-            }
-        });
-    </script>
+    <script src="static/js/lucide.min.js"></script>
+    <script src="static/js/site.js"></script>
 </body>
 </html>

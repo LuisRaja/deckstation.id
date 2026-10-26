@@ -3,72 +3,150 @@
 
 {% block title %}Services — DeckStation.id | PRO Audio Repair Specialist{% endblock %}
 
+{% block meta_desc %}Independent repair & maintenance service for DJ & Pro Audio equipment in Bali. CDJ, DJM, Technics SL-1200, mixer, PA system and on-site maintenance.{% endblock %}
+
+{% block hero %}
+<section class="page-hero">
+        <img class="page-hero-bg" src="{{ url_for('static', filename='gambar/CDJ 3000 SET.webp') }}" alt="Pioneer CDJ setup">
+        <div class="page-hero-inner">
+            <nav class="breadcrumb">
+                <a href="{{ url_for('home') }}">Home</a>
+                <span class="sep">/</span>
+                <span>Services</span>
+            </nav>
+            <div class="eyebrow">What We Service</div>
+            <h1>Our Services</h1>
+            <p>Choose the service you need</p>
+        </div>
+    </section>
+{% endblock %}
+
 {% block content %}
-<div class="page-header fade-in">
-    <h1>Our Services</h1>
-    <p>Repair & maintenance solutions for your DJ & Pro Audio equipment</p>
-</div>
+<div class="chip-row">
+            <button class="chip active" type="button" data-filter-chip="all">All Services</button>
+            <button class="chip" type="button" data-filter-chip="repair">Repair</button>
+            <button class="chip" type="button" data-filter-chip="maintenance">Maintenance</button>
+            <button class="chip" type="button" data-filter-chip="installation">Installation</button>
+            <button class="chip" type="button" data-filter-chip="rental">Rental</button>
+            <button class="chip" type="button" data-filter-chip="consultation">Consultation</button>
+        </div>
 
-<div class="services-grid">
-    <div class="service-card fade-in">
-        <div class="icon">🎛️</div>
-        <h3>CDJ & DJM Repair Service</h3>
-        <p>
-            Fixing Cue/Play buttons, jog wheel errors, displays, fader replacements,
-            and mainboard issues for CDJ/DJM series. We handle all brands including
-            Pioneer, Denon, Numark, and more.
-        </p>
-        <p><strong>Includes:</strong></p>
-        <ul style="margin:10px 0 20px 20px;font-size:14px;color:#555;line-height:1.7;">
-            <li>Tactile switch replacement (Cue/Play)</li>
-            <li>Jog wheel repair (sensor, bearing, PCB)</li>
-            <li>LCD display repair</li>
-            <li>Fader & crossfader replacement</li>
-            <li>Mainboard & power supply service</li>
-        </ul>
-        <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20service%20CDJ%2FDJM.%0ANama%3A%20%0ALayanan%3A%20CDJ%2FDJM%20Repair%0AKerusakan%3A%20%0AAlamat%20pickup%3A%20%0ATanggal%3A%20" class="btn btn-wa" target="_blank" rel="noopener">Book via WhatsApp</a>
-    </div>
+        <section class="services-full">
+        <div class="services-grid">
 
-    <div class="service-card fade-in">
-        <div class="icon">💿</div>
-        <h3>Technics SL-1200 Service & Calibration</h3>
-        <p>
-            Total overhaul, pitch calibration, RCA cable repair, tonearm service, and
-            mechanical cleaning for Technics SL-1200 series (MK2, MK3, MK5, 1200G).
-        </p>
-        <p><strong>Includes:</strong></p>
-        <ul style="margin:10px 0 20px 20px;font-size:14px;color:#555;line-height:1.7;">
-            <li>Pitch control calibration</li>
-            <li>Tonearm repair & replacement</li>
-            <li>RCA cable & grounding replacement</li>
-            <li>Mechanical cleaning & lubrication</li>
-            <li>Electrical & motor service</li>
-        </ul>
-        <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20service%20Technics%20SL-1200.%0ANama%3A%20%0ALayanan%3A%20Technics%20SL-1200%0AKerusakan%3A%20%0AAlamat%20pickup%3A%20%0ATanggal%3A%20" class="btn btn-wa" target="_blank" rel="noopener">Book via WhatsApp</a>
-    </div>
+            <div class="service-card fade-in" data-category="repair">
+                <div class="icon-badge"><i data-lucide="wrench"></i></div>
+                <span class="tag">Repair</span>
+                <h3>All-In Equipment Repair</h3>
+                <p>Complete repair service for every part of your audio chain &mdash; from a single switch to a full cabinet, handled by one workshop.</p>
+                <ul class="spec-list">
+                    <li><i data-lucide="check"></i> CDJ players &amp; DJM mixers</li>
+                    <li><i data-lucide="check"></i> Power amplifiers &amp; DSP processors</li>
+                    <li><i data-lucide="check"></i> Graphic &amp; parametric equalizers</li>
+                    <li><i data-lucide="check"></i> Cables, DI boxes &amp; accessories</li>
+                </ul>
+                <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20service%20peralatan%20audio%20saya.%0ANama%3A%20%0ALayanan%3A%20All-In%20Repair%0AUnit%3A%20%0AKerusakan%3A%20%0AAlamat%20pickup%3A%20%0ATanggal%3A%20" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Book via WhatsApp</a>
+            </div>
 
-    <div class="service-card fade-in">
-        <div class="icon">📍</div>
-        <h3>Venue & Club On-Site Maintenance</h3>
-        <p>
-            Regular maintenance and check-up packages for DJ equipment directly at clubs, bars,
-            or rental venues. We come to your location across all Bali area.
-        </p>
-        <p><strong>Includes:</strong></p>
-        <ul style="margin:10px 0 20px 20px;font-size:14px;color:#555;line-height:1.7;">
-            <li>Periodic check-up of all DJ equipment</li>
-            <li>Cleaning & preventive maintenance</li>
-            <li>Technical preparation for events</li>
-            <li>On-site diagnosis & troubleshooting</li>
-            <li>Equipment condition report</li>
-        </ul>
-        <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20jadwalkan%20on-site%20maintenance.%0ANama%3A%20%0ALayanan%3A%20On-Site%20Maintenance%0AAlamat%20venue%3A%20%0ATanggal%3A%20%0AKebutuhan%3A%20" class="btn btn-wa" target="_blank" rel="noopener">Book via WhatsApp</a>
-    </div>
-</div>
+            <div class="service-card fade-in" data-category="maintenance">
+                <div class="icon-badge"><i data-lucide="volume-2"></i></div>
+                <span class="tag">Maintenance</span>
+                <h3>Club &amp; Venue Audio Maintenance</h3>
+                <p>Scheduled maintenance for the audio system in your club, restaurant, bar, beach club or private space &mdash; kept working all year round.</p>
+                <ul class="spec-list">
+                    <li><i data-lucide="check"></i> Periodic check-up &amp; deep cleaning</li>
+                    <li><i data-lucide="check"></i> Pre-event soundcheck &amp; tuning</li>
+                    <li><i data-lucide="check"></i> Fault tracking &amp; condition report</li>
+                    <li><i data-lucide="check"></i> Emergency on-site support</li>
+                </ul>
+                <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20maintenance%20audio%20system%20tempat%20saya.%0ANama%3A%20%0ALayanan%3A%20Audio%20Maintenance%0ALokasi%20venue%3A%20%0AJadwal%3A%20%0AKebutuhan%3A%20" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Book via WhatsApp</a>
+            </div>
 
-<section class="contact-section fade-in">
-    <h2 class="section-title">Other Services?</h2>
-    <p>If your equipment is not listed above, contact us for a free consultation.</p>
-    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20konsultasi%20service%20equipment%20saya" class="btn btn-wa" target="_blank" rel="noopener">💬 Free Consultation</a>
-</section>
+            <div class="service-card fade-in" data-category="installation">
+                <div class="icon-badge"><i data-lucide="settings"></i></div>
+                <span class="tag">Installation</span>
+                <h3>Audio System Installation</h3>
+                <p>End-to-end setup for new venues and renovations &mdash; system design, speaker placement, cabling, configuration and tuning until it sounds right.</p>
+                <ul class="spec-list">
+                    <li><i data-lucide="check"></i> System design &amp; speaker placement</li>
+                    <li><i data-lucide="check"></i> Cabling, rigging &amp; signal routing</li>
+                    <li><i data-lucide="check"></i> Amplifier &amp; DSP configuration</li>
+                    <li><i data-lucide="check"></i> Tuning, testing &amp; handover</li>
+                </ul>
+                <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20instalasi%20audio%20system.%0ANama%3A%20%0ALayanan%3A%20Audio%20Installation%0ALokasi%3A%20%0AEstimasi%20ruang%3A%20%0AKebutuhan%3A%20" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Book via WhatsApp</a>
+            </div>
+
+            <div class="service-card fade-in" data-category="rental">
+                <div class="icon-badge"><i data-lucide="package"></i></div>
+                <span class="tag">Rental</span>
+                <h3>DJ Gear &amp; Event Rental</h3>
+                <p>Rent ready-to-play equipment for parties, clubs and events &mdash; DJ players, mixers, turntables, speakers, lighting and laser effects.</p>
+                <ul class="spec-list">
+                    <li><i data-lucide="check"></i> CDJ, DJM &amp; turntable rental</li>
+                    <li><i data-lucide="check"></i> Speaker, sub &amp; monitor rental</li>
+                    <li><i data-lucide="check"></i> Lighting &amp; laser effect rental</li>
+                    <li><i data-lucide="check"></i> Event packages with operator</li>
+                </ul>
+                <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20sewa%20peralatan%20DJ%20%2F%20event.%0ANama%3A%20%0ALayanan%3A%20Equipment%20Rental%0ATanggal%20event%3A%20%0ALokasi%3A%20%0AKebutuhan%3A%20" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Book via WhatsApp</a>
+            </div>
+
+            <div class="service-card fade-in" data-category="consultation">
+                <div class="icon-badge"><i data-lucide="headset"></i></div>
+                <span class="tag">Consultation</span>
+                <h3>Pro Audio Consultation</h3>
+                <p>Talk to a technician before you spend. We help plan the system, choose the right equipment and solve acoustic and signal problems.</p>
+                <ul class="spec-list">
+                    <li><i data-lucide="check"></i> System design &amp; upgrade advice</li>
+                    <li><i data-lucide="check"></i> Equipment selection &amp; comparison</li>
+                    <li><i data-lucide="check"></i> Acoustic &amp; signal problem solving</li>
+                    <li><i data-lucide="check"></i> On-site technical advice</li>
+                </ul>
+                <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20konsultasi%20pro%20audio.%0ANama%3A%20%0ALayanan%3A%20Pro%20Audio%20Consultation%0Aequipment%3A%20%0APertanyaan%3A%20" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Book via WhatsApp</a>
+            </div>
+
+        </div>
+        </section>
+
+        <section style="margin-top:90px;">
+            <div class="section-head">
+                <div class="eyebrow">How It Works</div>
+                <h2>4 steps from problem to playtime</h2>
+                <p>A clear, documented workflow so you always know what happens to your equipment.</p>
+            </div>
+            <ol class="steps">
+                <li class="step-item fade-in">
+                    <div class="step-num">01</div>
+                    <h3>Send the details</h3>
+                    <p>WhatsApp us the model, serial and symptoms — or fill the booking form. Photos and videos help us pre-diagnose for free.</p>
+                </li>
+                <li class="step-item fade-in">
+                    <div class="step-num">02</div>
+                    <h3>Diagnosis &amp; estimate</h3>
+                    <p>We confirm the fault, quote the scope and turnaround time before touching the unit. No surprise costs after the job starts.</p>
+                </li>
+                <li class="step-item fade-in">
+                    <div class="step-num">03</div>
+                    <h3>Repair &amp; test</h3>
+                    <p>Repair is done at the workshop with genuine parts, followed by full function testing and audio quality verification.</p>
+                </li>
+                <li class="step-item fade-in">
+                    <div class="step-num">04</div>
+                    <h3>Delivery &amp; warranty</h3>
+                    <p>Pickup or on-site handover, warranty documentation, plus a short handover briefing so the rig behaves exactly as expected.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section style="margin-top:90px;">
+            <div class="band-cta">
+                <div>
+                    <h2>Not sure which service you need?</h2>
+                    <p>Send a photo and a short description of the problem. We will tell you the likely cause, the right service line and an honest estimate — free of charge.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20konsultasi%20service%20equipment%20saya" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Free Consultation</a>
+                    <a href="{{ url_for('booking') }}" class="btn btn-outline">Book Online</a>
+                </div>
+            </div>
+        </section>
 {% endblock %}

@@ -3,62 +3,171 @@
 
 {% block title %}Booking — DeckStation.id | PRO Audio Repair Specialist{% endblock %}
 
+{% block meta_desc %}Book a DJ or pro audio equipment repair, calibration or on-site maintenance in Bali. Free diagnosis, clear estimate and service warranty.{% endblock %}
+
+{% block hero %}
+<section class="page-hero">
+        <img class="page-hero-bg" src="{{ url_for('static', filename='gambar/DJM A9.png') }}" alt="Pioneer DJM mixer">
+        <div class="page-hero-inner">
+            <nav class="breadcrumb">
+                <a href="{{ url_for('home') }}">Home</a>
+                <span class="sep">/</span>
+                <span>Booking</span>
+            </nav>
+            <div class="eyebrow">Schedule a Service</div>
+            <h1>Book a Service</h1>
+            <p>Fill out the form and we will confirm availability, pickup schedule and an estimated timeline within 24 hours. Free diagnosis on every booking.</p>
+        </div>
+    </section>
+{% endblock %}
+
 {% block content %}
-<div class="page-header fade-in">
-    <h1>Book a Service</h1>
-    <p>Fill out the form below to schedule a repair or maintenance for your equipment</p>
-</div>
+<section class="booking-full">
+        <div class="booking-layout">
 
-<div class="booking-form fade-in">
-    <form method="POST" action="{{ url_for('booking') }}">
-        <div class="form-group">
-            <label for="nama">Full Name <span class="required">*</span></label>
-            <input type="text" id="nama" name="nama" required placeholder="Enter your name">
+        <div class="booking-info">
+
+            <section class="fade-in">
+                <div class="section-head align-left">
+                    <div class="eyebrow">How It Works</div>
+                    <h2>3 steps to get your gear fixed</h2>
+                </div>
+                <ol class="steps steps-stack">
+                    <li class="step-item fade-in">
+                        <div class="step-num">01</div>
+                        <h3>Fill the form</h3>
+                        <p>Tell us the equipment, the problem and when you need it back.</p>
+                    </li>
+                    <li class="step-item fade-in">
+                        <div class="step-num">02</div>
+                        <h3>We confirm</h3>
+                        <p>We reply within 24 hours with the schedule, estimate and pickup details.</p>
+                    </li>
+                    <li class="step-item fade-in">
+                        <div class="step-num">03</div>
+                        <h3>Pickup &amp; repair</h3>
+                        <p>We collect the unit, diagnose it, and you approve the quote before work starts.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section style="margin-top:38px;">
+                <div class="feature-grid">
+                    <div class="feature-item fade-in">
+                        <div class="icon-badge sm"><i data-lucide="message-circle"></i></div>
+                        <h3>Free consultation</h3>
+                        <p>No charge for diagnosis advice. Send photos and video of the fault and we will tell you the likely cause.</p>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="icon-badge sm"><i data-lucide="shield-check"></i></div>
+                        <h3>Service warranty</h3>
+                        <p>Every completed repair carries a warranty. If the same fault returns, we check it again at no extra cost.</p>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="icon-badge sm"><i data-lucide="truck"></i></div>
+                        <h3>Pickup across Bali</h3>
+                        <p>We collect and return your equipment anywhere in Bali, or work on-site at your venue.</p>
+                    </div>
+                    <div class="feature-item fade-in">
+                        <div class="icon-badge sm"><i data-lucide="timer"></i></div>
+                        <h3>Response in 24 hours</h3>
+                        <p>Bookings are answered within one working day, with a written scope before work begins.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top:38px;">
+                <div class="callout">
+                    <i data-lucide="clipboard-list"></i>
+                    <div>
+                        <h3>What to prepare before pickup</h3>
+                        <ul>
+                            <li><i data-lucide="check"></i> Brand, model and serial number of each unit</li>
+                            <li><i data-lucide="check"></i> Short description or video of the fault</li>
+                            <li><i data-lucide="check"></i> Accessories included (power cable, flight case, link cables)</li>
+                            <li><i data-lucide="check"></i> Your event or deadline date, so we can prioritise</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
-        <div class="form-group">
-            <label for="wa">WhatsApp Number <span class="required">*</span></label>
-            <input type="tel" id="wa" name="wa" required placeholder="08xxxxxxxxxx" pattern="[0-9]+">
-            <div class="hint">Keep notifications on for booking confirmation</div>
+        <div class="booking-main">
+        <div class="booking-form fade-in">
+            <form method="POST" action="{{ url_for('booking') }}">
+                <div class="form-group">
+                    <label for="nama">Full Name <span class="required">*</span></label>
+                    <input type="text" id="nama" name="nama" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="wa">WhatsApp Number <span class="required">*</span></label>
+                    <input type="tel" id="wa" name="wa" required placeholder="08xxxxxxxxxx" pattern="[0-9]+">
+                    <div class="hint">Keep notifications on for booking confirmation</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="layanan">Service <span class="required">*</span></label>
+                    <select id="layanan" name="layanan" required>
+                        <option value="">— Select Service —</option>
+                        <option value="All-In Repair">All-In Equipment Repair (CDJ, DJM, Amps, DSP, EQ)</option>
+                        <option value="Audio Maintenance">Club &amp; Venue Audio Maintenance</option>
+                        <option value="Audio Installation">Audio System Installation</option>
+                        <option value="Equipment Rental">DJ Gear &amp; Event Rental</option>
+                        <option value="Pro Audio Consultation">Pro Audio Consultation</option>
+                        <option value="Lainnya">Other (describe in issues)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="equipment">Equipment Model <span class="required">*</span></label>
+                    <input type="text" id="equipment" name="equipment" required placeholder="e.g. Pioneer CDJ-3000 x2, DJM-900NXS2, Technics SL-1200MK2">
+                </div>
+
+                <div class="form-group">
+                    <label for="keluhan">Issue Description <span class="required">*</span></label>
+                    <textarea id="keluhan" name="keluhan" required placeholder="Describe the issue with your equipment in detail..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Pickup Address <span class="required">*</span></label>
+                    <textarea id="alamat" name="alamat" required placeholder="Enter your full address for equipment pickup. (We are a call-out service — covering all Bali area)"></textarea>
+                    <div class="hint">We are a call-out service — we will pick up your equipment from your location</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tanggal">Preferred Date &amp; Time <span class="required">*</span></label>
+                    <input type="datetime-local" id="tanggal" name="tanggal" required>
+                </div>
+
+                <div class="form-group" style="margin-top:10px;">
+                    <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:16px;">
+                        <i data-lucide="calendar-check"></i> Submit Booking
+                    </button>
+                </div>
+
+                <p style="text-align:center;margin-top:15px;font-size:13px;color:#888;">
+                    Booking data will be sent to our email.
+                    We will confirm via your WhatsApp.
+                </p>
+            </form>
+        </div>
         </div>
 
-        <div class="form-group">
-            <label for="layanan">Service <span class="required">*</span></label>
-            <select id="layanan" name="layanan" required>
-                <option value="">— Select Service —</option>
-                <option value="CDJ/DJM Repair">🎛️ CDJ/DJM Repair</option>
-                <option value="Technics SL-1200 Service">💿 Technics SL-1200 Service & Calibration</option>
-                <option value="On-Site Maintenance">📍 On-Site Maintenance</option>
-                <option value="Lainnya">Other (describe in issues)</option>
-            </select>
         </div>
+        </section>
 
-        <div class="form-group">
-            <label for="keluhan">Issue Description <span class="required">*</span></label>
-            <textarea id="keluhan" name="keluhan" required placeholder="Describe the issue with your equipment in detail..."></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="alamat">Pickup Address <span class="required">*</span></label>
-            <textarea id="alamat" name="alamat" required placeholder="Enter your full address for equipment pickup. (We are a call-out service — covering all Bali area)"></textarea>
-            <div class="hint">We are a call-out service — we will pick up your equipment from your location</div>
-        </div>
-
-        <div class="form-group">
-            <label for="tanggal">Preferred Date & Time <span class="required">*</span></label>
-            <input type="datetime-local" id="tanggal" name="tanggal" required>
-        </div>
-
-        <div style="text-align:center;margin-top:30px;">
-            <button type="submit" class="btn btn-primary" style="width:100%;padding:16px;font-size:16px;">
-                Submit Booking
-            </button>
-        </div>
-
-        <p style="text-align:center;margin-top:15px;font-size:13px;color:#888;">
-            Booking data will be sent to our email and scheduled to Google Calendar.
-            We will confirm via your WhatsApp.
-        </p>
-    </form>
-</div>
+        <section style="margin-top:70px;">
+            <div class="band-cta">
+                <div>
+                    <h2>Prefer to talk first?</h2>
+                    <p>Message us on WhatsApp with your equipment model and the problem. We will guide you to the right service and quote.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="https://wa.me/6285602897420?text=Halo%20DeckStation%2C%20saya%20mau%20booking%20service%20equipment%20saya" class="btn btn-wa" target="_blank" rel="noopener"><i data-lucide="message-circle"></i> Chat on WhatsApp</a>
+                    <a href="{{ url_for('layanan') }}" class="btn btn-outline">See All Services</a>
+                </div>
+            </div>
+        </section>
 {% endblock %}
